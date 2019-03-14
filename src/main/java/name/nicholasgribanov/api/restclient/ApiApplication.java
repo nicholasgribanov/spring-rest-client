@@ -1,4 +1,4 @@
-package name.nicholasgribanov.api;
+package name.nicholasgribanov.api.restclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
