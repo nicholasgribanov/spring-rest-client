@@ -16,6 +16,8 @@
 
     <properties>
         <java.version>11</java.version>
+        <!--need snapshot version-->
+        <!--https://github.com/spring-projects/spring-boot/issues/10319-->
     </properties>
 
     <dependencies>
@@ -37,6 +39,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7-1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
