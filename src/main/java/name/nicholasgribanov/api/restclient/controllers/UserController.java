@@ -28,7 +28,7 @@ public class UserController {
     @PostMapping("/users")
     public String formPost(Model model, ServerWebExchange serverWebExchange) {
 
-        Mono<MultiValueMap<String, String>> map = serverWebExchange.getFormData();
+        /*Mono<MultiValueMap<String, String>> map = serverWebExchange.getFormData();
 
         Mono<Integer> limit1 = map.map(m -> Integer.valueOf(m.get("limit").get(0)));
         log.info("@@@@" + map.hasElement());
@@ -47,5 +47,12 @@ public class UserController {
         model.addAttribute("users", apiService.getUsers(limit[0]));
 
         return "userlist";
+        */
+        model.addAttribute("users", apiService
+                .getUsers(serverWebExchange
+                        .getFormData()
+                        .map(data -> Integer.valueOf(data.getFirst("limit")))));
+
+        return "userList";
     }
 }
